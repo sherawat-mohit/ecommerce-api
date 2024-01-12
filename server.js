@@ -1,8 +1,9 @@
 // importing essentials
-// require("dotenv").config();
+require("dotenv").config();
 const express = require("express");
 const routes = require("./routes/routes");
 const bodyParser = require('body-parser');
+const connectDB = require("./config/connectDB");
 
 
 // Setting up PORT
@@ -17,8 +18,8 @@ app.use((req,res,next)=>{
     next();
 });
 
-// using express inbuilt body-parser to parse over the request body
-app.use(bodyParser.urlencoded({extended: true}));
+// parsing json
+app.use(bodyParser.json());
 
 
 // Using routes
@@ -26,8 +27,10 @@ app.use("/", routes);
 
 
 // function to listen to the port and start the server
-const start = () => {
+const start = async () => {
     try{
+        await connectDB(process.env.MONGODB_URL);
+        console.log("connected to the database");
         app.listen(PORT, () => {
             console.log(`Server is up and running on port : ${PORT}`);
         });
