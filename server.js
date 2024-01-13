@@ -12,12 +12,6 @@ const PORT = process.env.PORT || 3000;
 // initializing express
 const app = express();
 
-// Middlewares
-app.use((req,res,next)=>{
-    console.log("Hello from Middleware");
-    next();
-});
-
 // parsing json
 app.use(bodyParser.json());
 
