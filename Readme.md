@@ -44,7 +44,6 @@ Follow these steps to set up and run the API on your local machine:
 ## Steps to Use this API with Postman
 
 1. **Create a Product:**
-
    - **Endpoint:** `POST /products`
    - **Request Body:**
      ```json
@@ -70,11 +69,9 @@ Follow these steps to set up and run the API on your local machine:
      ```
 
 2. **Retrieve Products:**
-
    - **Endpoint:** `GET /products`
 
 3. **Update a Variant:**
-
    - **Endpoint:** `PUT /products/:productId/variants/:variantId`
    - **Request Body:**
      ```json
@@ -85,11 +82,9 @@ Follow these steps to set up and run the API on your local machine:
      ```
 
 4. **Delete a Product:**
-
    - **Endpoint:** `DELETE /products/:productId`
 
 5. **Add a Variant to a Product:**
-
    - **Endpoint:** `POST /products/:productId/variants`
    - **Request Body:**
      ```json
@@ -102,7 +97,6 @@ Follow these steps to set up and run the API on your local machine:
      ```
 
 6. **Update a Variant within a Product:**
-
    - **Endpoint:** `PUT /products/:productId/variants/:variantId`
    - **Request Body:**
      ```json
@@ -113,8 +107,17 @@ Follow these steps to set up and run the API on your local machine:
      ```
 
 7. **Delete a Variant within a Product:**
-
    - **Endpoint:** `DELETE /products/:productId/variants/:variantId`
+
+
+
+### Select and Sort Functionality for Retrieving Products
+
+- **Endpoint:** `GET /products`
+- **Query Parameters:**
+  - `name`: Filter products by name (case-insensitive).
+  - `sort`: Sort products. Example: `sort=price,-name` (ascending price, descending name).
+  - `select`: Select specific fields to retrieve. Example: `select=name,price`.
 
 
 ## 4. Technologies Used
