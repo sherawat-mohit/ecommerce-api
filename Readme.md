@@ -88,6 +88,34 @@ Follow these steps to set up and run the API on your local machine:
 
    - **Endpoint:** `DELETE /products/:productId`
 
+5. **Add a Variant to a Product:**
+
+   - **Endpoint:** `POST /products/:productId/variants`
+   - **Request Body:**
+     ```json
+     {
+       "name": "Wireless Charging",
+       "sku": "BS-003",
+       "additionalCost": 25,
+       "stockCount": 15
+     }
+     ```
+
+6. **Update a Variant within a Product:**
+
+   - **Endpoint:** `PUT /products/:productId/variants/:variantId`
+   - **Request Body:**
+     ```json
+     {
+       "name": "Updated Variant Name",
+       "additionalCost": 200
+     }
+     ```
+
+7. **Delete a Variant within a Product:**
+
+   - **Endpoint:** `DELETE /products/:productId/variants/:variantId`
+
 
 ## 4. Technologies Used
 

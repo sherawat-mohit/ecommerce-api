@@ -14,9 +14,14 @@ Router.post('/create', ProductController.createProduct);
 // Delete a Product
 Router.delete('/delete/:productId', ProductController.deleteProduct);
 
-
 // Update a Product
 Router.put('/products/:productId', ProductController.updateProduct);
+
+// Add a variant to a product
+Router.post('/products/:productId/variants', ProductController.addVariant);
+
+// Delete a variant within a product
+Router.delete('/products/:productId/variants/:variantId', ProductController.deleteVariant);
 
 // Update a variant within a product
 Router.put('/products/:productId/variants/:variantId', ProductController.updateVariant);
